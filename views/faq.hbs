@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<head>
+    <title>Off The Street</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/faq-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+
+    <!-- Body -->
+    <div class="container">
+        <p class="heading">FAQ</p>
+
+        <div id="accordion" class="myaccordion">
+
+            <div class="card">
+                <div class="card-header" id="faqOne">
+                    <h2 class="mb-0">
+                        <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Store Location?
+                            <li class="fa fa-plus" style="font-size:14px"></li>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="faqOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Kingsville, Antipolo City</li>
+                            <li>Balagtas, Bulacan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="faqTwo">
+                    <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How to order?
+                        <li class="fa fa-plus" style="font-size:14px"></li>
+                    </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="faqTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Order through our website</li>
+                            <li>Send a direct message on our social media accounts and fill up the order form</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="faqThree">
+                    <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Meet up? Handling fee?
+                        <li class="fa fa-plus" style="font-size:14px"></li>
+                    </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="faqThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Masinag Area (Antipolo)</li>
+                            <li>Balagtas Area (Bulacan)</li>
+                            <li>Handling Fee: 100php</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header" id="faqFour">
+                    <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Pick up?
+                        <li class="fa fa-plus" style="font-size:14px"></li>
+                    </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="faqFour" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Kingsville Subdivision, Antipolo City</li>
+                            <li>Balagtas, Bulacan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="faqFive">
+                    <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+                        Payment Method?
+                        <li class="fa fa-plus" style="font-size:14px"></li>
+                    </button>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="faqFive" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Cash</li>
+                            <li>GCash</li>
+                            <li>Bank Transfer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="faqSix">
+                    <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseFour">
+                        Delivery/Shipping?
+                        <li class="fa fa-plus" style="font-size:14px"></li>
+                    </button>
+                    </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="faqSix" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>LALAMOVE</li>
+                            <li>J&amp;T</li>
+                            <li>GRAB</li>
+                            <li>MR SPEEDY</li>
+                            <li>LBC</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="faqSeven">
+                    <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour">
+                        Cash on delivery?
+                        <li class="fa fa-plus" style="font-size:14px"></li>
+                    </button>
+                    </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="faqSeven" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>LALAMOVE COD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>

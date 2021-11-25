@@ -1,0 +1,65 @@
+html,body{
+    background-image: url(../images/mockup\ 1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card{
+    height: 560px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 22%;
+    width: 560px;
+    background-color: rgba(0,0,0,0.95) !important;
+    opacity: 1;
+    padding: 20px;
+}
+
+.card-header h3{
+    color: white;
+}
+
+label{
+    color: white;
+}
+
+.register_btn{
+    color: white;
+    background-color: #000;
+    border-color:white;
+    width: 100px;
+}
+
+.register_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #000;
+    overflow-x: hidden;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+	
+}
+
+.img-bg{
+    height: auto;
+    width: auto;
+    
+}
+
+.img-logo{
+
+	height: auto;
+	width: 350px;
+	max-height: 100%;
+	max-width: 100%;
+}

@@ -1,0 +1,128 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #eee;
+}
+
+.sidebar{
+	height: 100vh;
+	background-color: #000000;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 5px 7px 25px #999;
+	overflow-y: auto;
+}
+.sidebar-sub{
+	height: auto;
+}
+
+.sidebar-subtext{
+	text-indent: 20%;
+}
+
+.bottom-border{
+	border-bottom: 1px groove #eee;
+}
+
+.top-navbar{
+	background-color: #000000;
+}
+
+.sidebar-link{
+	transition: all .4s;
+}
+
+.sidebar-link:hover{
+	background-color: #444;
+	border-radius: 5px;
+}
+.current{
+	background-color: #111212;
+	border-radius: 7px;
+	transition: all .3s;
+}
+
+.current:hover {
+	background-color: #444;
+	border-radius: 7px;
+	box-shadow: 2px 5px 20px #111;
+	transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .top-navbar {
+    position: static;
+  }
+}
+
+
+button:visited{
+	background-color: green;
+}
+
+.btn-success{
+	
+	width: 75%;
+}
+
+
+
+.img-logo{
+	
+	height: auto;
+	width: auto;
+	max-height: 100px;
+	max-width: 250px;
+	
+}
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #000000;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #000000 !Important;
+    border: solid 1px #000000 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #000000 !Important;
+    border: solid 1px #000000;
+}
+
+.card-body{
+	background-color: black;
+}
+
+.top-nav-title{
+	font-family: 'Montserrat', sans-serif;;
+}
+
+a{
+	color:white;
+}
+
+a:hover{
+	text-decoration: none;
+	color: rgb(150, 150, 150);
+}

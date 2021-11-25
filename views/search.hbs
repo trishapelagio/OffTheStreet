@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+    <title>Off The Street</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home-styles.css">
+    <link rel="stylesheet" href="css/search-styles.css">
+    <script src="javascript/search.js"></script>
+    <script src="javascript/cart.js"></script>
+    <!-- Animation-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $( document ).ready(function() {
+            AOS.init()
+        });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+    
+    <!-- Body -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row mt-5">
+                    <!-- filter tab -->
+                    <form class="col-3" method="get" action="/filter">
+
+                        <!-- upper -->
+                        <div class="row">
+                            <p class="filter-heading">UPPER</p>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="shirt">T-SHIRTS</button>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="hoodie">HOODIES</button>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="longsleeve">LONG SLEEVES</button>
+                        </div>
+                        
+                        <!-- lower -->
+                        <div class="row">
+                            <p class="filter-heading">LOWER</p>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="shorts">SHORTS</button>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="pants">PANTS</button>
+                        </div>
+                        
+                        <!-- accessories -->
+                        <div class="row">
+                            <p class="filter-heading">ACCESSORIES</p>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="hat">HATS</button>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="beanie">BEANIES</button>
+                        </div>
+                        <div class="row">
+                            <button id="category" name="category" value="bag">BAGS</button>
+                        </div>
+                    </form>
+
+                    <!-- content -->
+                    <div class="col-9">
+                        <img src="images/heading.png" class="img-heading">
+
+                        <div class="col d-flex justify-content-center flex-wrap mt-4">
+                            {{#if products}}
+                            {{#each products}}
+                            <a class="item">
+                                <div class="card" data-aos="fade-up" data-aos-duration="500">
+                                    <div class="card item" style="width: 14rem;height:100%">
+                                        <a href="/productDetails?id={{this._id}}"><img src={{pictures}} class="card-img-top itemphoto2"></a>
+                                        <div class="var2">
+                                            <h1 class="variation2">Size: {{variation}}</h1>
+                                        </div>
+                                        <div class="price d-flex justify-content-center">
+                                            <h1 class="priceval">{{price}} php</h1>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="productDetails" class="cardname"><p class="card-text itemname">{{this.name}}</p></a>
+                                        </div>
+                                    </div>
+                                    <button class="add" value={{_id}} name="{{name}}">
+                                        <li class="fa fa-plus"></li>
+                                    </button>
+                                </div>
+                            </a>
+                            {{/each}}
+                            {{else}}
+                                <p>No products found</p>
+                            {{/if}}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    <!-- Add to Cart Modal -->
+    <div class="modal fade top" id="cart-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="true">
+        <div class="modal-dialog modal-frame modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <p class="pt-3 pr-2">Added to Cart</p>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <a type="button" class="btn btn-outline-dark" data-dismiss="modal">Ok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>

@@ -1,0 +1,98 @@
+.main{
+    margin-bottom: 70px;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+}
+
+.item-pic {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.input-number {
+    font-size: 12px;
+    text-align: center;
+}
+
+.item {
+    border-bottom: 1px solid gray;
+}
+
+/** Order Summary **/
+
+.summary {
+    margin-left: 20px;
+    width: 90%;
+    height: 100%;
+    background: #F7F7F7;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.summarytitle {
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 25px;
+    font-size: 22px;
+    margin-left: 30px;
+    line-height: 41px;
+}
+
+.summarycontent {
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.summarytext{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 33px;
+    color: #000000;
+    margin: 010px;
+}
+
+.summaryselect {
+    width: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.summaryselect:focus {   
+    border-color: rgba(241, 241, 241, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.6);
+    outline: 0 none;
+}
+
+.subtotalrow{
+    margin-left: 5px;
+}
+
+.checkoutbtn{
+    margin: 30px;
+    /* margin-left: 55%; */
+    background-color: black;
+    border-radius: 50px;
+    width: 190px;
+}
+
+.checkoutbtn:hover{
+    background-color: rgb(85, 85, 85);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.margin-reduce{
+   
+}

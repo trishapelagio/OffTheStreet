@@ -1,0 +1,92 @@
+.filter-heading {
+    font-weight: bold;
+    margin: 20 0 10 5;
+    border-bottom: 1px solid black;
+}
+
+.img-heading {
+    width: 100%;
+}
+
+.price {
+    width: 100px;
+    margin-left: 120px;
+}
+
+.priceval {
+    font-size: 16px;
+}
+
+.sale {
+    margin-left: 150px;
+    margin-top: 152px;
+    width: 70px;
+}
+
+.salepercent{
+    font-size: 16px;
+    margin: 0;
+}
+
+.card-body {
+    font-size: 16px;
+}
+
+.wishlist {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 85px;
+    padding: 3px;
+    display: none;
+}
+
+.var2{
+    position: absolute;
+    background-color: black;
+    width: 75px;
+    height: 20px;
+    margin-top: 145px;
+    margin-left: 145px;
+ }
+ 
+.variation2{
+    padding:1px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    font-weight: 50;
+}
+
+.add {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 170px;
+    padding: 3px;
+    display: none;
+}
+
+button {
+    border: none;
+    background-color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card:hover .add, .card:hover .wishlist {
+    display: block;
+}
+
+
+.itemphoto2{
+    object-fit: cover;
+    object-position: center; 
+    width: 223px;
+    height: 200px;
+}

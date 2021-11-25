@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+    <title>Shopping Cart</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/shipping-styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="javascript/checkout.js"> </script>
+    <script src="javascript/validator.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+
+    <!-- Body -->
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h1 class="d-flex justify-content-center" id="ordersummary">ORDER SUMMARY</h1>
+                <div class="summary">
+                    <h1 class="d-flex justify-content-center" id="pcs">Items: {{numItems}}</h1>
+                    <h1 class="d-flex justify-content-center" id="price">Total: {{total}} php</h1>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <div class="address">
+            <form method="post" action="/confirmation">
+                <input type="hidden" id="modeofpayment" name="modeofpayment" value={{modeofpayment}}>
+                <input type="hidden" id="modeofdelivery" name="modeofdelivery" value={{modeofdelivery}}>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <label for="firstname">First name</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" required value={{firstname}}>
+                    </div>
+                    <div class="col-6">
+                        <label for="lastname">Last name</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" required value={{lastname}}>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" required value={{email}}>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="number" class="form-control" id="phonenumber" name="phonenumber" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <label for="postalcode">Postal Code</label>
+                        <input type="number" class="form-control" id="postalcode" name="postalcode" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="province">Province</label>
+                        <input type="text" class="form-control" id="province" name="province" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="barangay">Barangay</label>
+                        <input type="text" class="form-control" id="barangay" name="barangay" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="street">Unit, Building Name, Street, Block, Lot</label>
+                        <input type="text" class="form-control" id="street" name="street" required>
+                    </div>
+                </div>
+                <div class="form-group row" id="userPoints">
+                    <div class="col">
+                        <label for="points">Apply Points</label>
+                        <input type="number" class="form-control" id="points" name="points" value=0 min=0 max={{points}}>
+                        <label>Available Points: {{points}}</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col d-flex justify-content-end">
+                        <button type="submit" class="btn btn-dark checkoutbtn" id="checkout" disabled>checkout</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>

@@ -1,0 +1,28 @@
+.info {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.pic {
+    width: 450px;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.content {
+    font-size: 22px;
+}
+
+.address {
+    margin-bottom: 50px;
+}

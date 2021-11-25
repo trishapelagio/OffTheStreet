@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <title>Off The Street</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="./css/order-summary.css">
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+
+    <div class="container order-body">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row"><h1 id="orderdetails">Order Details</h1></div>
+                <div class="details">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="row"><h1 id="ordernumber">Order #{{order._id}} <br> {{order.modepayment}} {{order.modedelivery}}</div>
+                            <div class="row"><h1 id="timeplaced">Placed on {{order.timeordered}}</h1></div>
+                        </div>
+                        <div class="col-4 ">
+                            <div class="row ">
+                                <div class="col d-flex justify-content-end totalprice">
+                                    <h1 id="total">Total <span id="price">P{{order.total}}</span></h1>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col d-flex justify-content-end">
+                                    <p id="status">{{order.status}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details col-md">
+                    <h1 class="ship">Shipping Address</h1>
+                    <p class="addr">{{address.firstname}} {{address.lastname}}</p>
+                    <p class="addr">{{address.email}} 0{{address.phonenum}}</p>
+                    <p class="addr">{{address.addressline}}</p>
+                    <p class="addr">{{address.barangay}}, {{address.city}}, {{address.province}}, {{address.postalcode}}</p>
+                </div>
+
+                {{!-- {{#if products}} --}}
+                {{#each products}}
+                <div class="details order">
+                    <div class="row">
+                        <div class="col-2"><img src={{product.pictures}} class="foodicon item-pic" alt="..."></div>
+                        <div class="col-7">
+                            <div class="row"><a href="/productDetails?id={{product._id}}" target="_blank"><h1 class="foodtitle">{{product.name}}</h1></a></div>
+                            <div class="row"><h1 class="var">Variation: ({{product.variation}}) {{product.color}}</h1></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="row pricerow d-flex justify-content-center">
+                                <h1 class="php">P <span class="price">{{product.price}}</span> 
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <h1 class="pcs">{{quantity}} pcs</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                {{!-- {{else}}
+                <p>no products</p>
+                {{/if}} --}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>

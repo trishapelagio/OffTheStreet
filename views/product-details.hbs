@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <title>Off The Street</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/product-styles.css">
+    <script src="javascript/cart.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+
+    <!-- Body -->
+    <div class="container">
+        <div class="row product" id="{{_id}}">
+            <div class="col-6">
+                <img src={{{pictures}}} class="item-pic itemphoto">
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5">
+                <p class="item-name">{{name}}</p>
+                <p class="item-desc">{{description}}</p>
+                <p class="item-desc">{{color}}</p>
+                <p class="item-price">Php {{price}}</p>
+                <div class="sizes">
+                    <ul>
+                        <li>
+                            <label>
+                                <span class="options">{{variation}}</span>
+                            </label>
+                        </li>
+                    </ul> 
+                </div> 
+                <div>
+                    <input type="hidden" name="id" value={{_id}} id="link">
+                    <button class="add" value={{_id}} name="{{name}}">add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add to Cart Modal -->
+    <div class="modal fade top" id="cart-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="true">
+        <div class="modal-dialog modal-frame modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <p class="pt-3 pr-2">Added to Cart</p>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <a type="button" class="btn btn-outline-dark" data-dismiss="modal">Ok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>

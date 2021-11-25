@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <title>Off The Street</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/about-styles.css">
+    
+    <!-- Animation-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $( document ).ready(function() {
+            AOS.init()
+        });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+
+    <!-- Body -->
+    <div class="container">
+        <p class="heading title">About Us</p>
+        <div class="row info">
+            <div class="col-7" data-aos="fade-right" data-aos-duration="500">
+                <p class="heading" >ORIGIN</p>
+                <p class="content">Off The Street (OTS) is a clothing line that originated in Balagtas, Bulacan as the result of the owners’ vision and dream to bring upscale fashion to the streets. </p>
+            </div>
+            <div class="col-5" data-aos="fade-left" data-aos-duration="500">
+                <img src="https://images.unsplash.com/photo-1591189063234-817139dfe01d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" class="pic right">
+            </div>
+        </div>
+
+        <div class="row info">
+            <div class="col-5" data-aos="fade-right" data-aos-duration="500">
+                <img src="https://images.unsplash.com/flagged/photo-1572262009479-12d6def8ad5f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9" class="pic">
+            </div>
+            <div class="col-7" data-aos="fade-left" data-aos-duration="500">
+                <p class="heading">OUR STORY</p>
+                <p class="content">We launched this website and started our operations in October 2020 as we aim to deliver fashionable and quality products right at your doorstep. 
+                    The people behind OTS are huge fans of streetwear apparel and accessories. The team seeks to showcase the talent of local artists in the country so we are partnering 
+                    with them for our designs. With that, Off The Street will be offering fashionable streetwear consisting of t-shirts, pants, jackets, bags, and accessories which are 
+                    all locally made. </p>
+            </div>
+        </div>
+
+        
+        <div class="row info">
+            <div class="col-7" data-aos="fade-right" data-aos-duration="500">
+                <p class="content">So are you ready to be part of the team? Let us all conquer the streets in style with Off The Street!</p>
+            </div>
+            <div class="col-5" data-aos="fade-left" data-aos-duration="500">
+                <img src="https://images.unsplash.com/photo-1530706286591-5d69f83bd514?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9" class="pic right">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{> footer}}
+</body>
+</html>

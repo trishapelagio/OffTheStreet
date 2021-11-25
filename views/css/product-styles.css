@@ -1,0 +1,89 @@
+.product{
+    margin-top: 80px;
+}
+
+.item-pic{
+    float: right;
+    margin-right: 20px;
+    height: 400px;
+}
+
+.item-name{
+    margin-top: 20px;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.item-desc{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.item-price{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.colors ul, .sizes ul{
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.colors li, .sizes li{
+    margin-right: 20px;
+    /* margin: 0 20px 0 0; */
+    display: inline-block;
+}
+
+.colors input, .sizes input{
+    display:none;
+}
+
+.colors input[type="radio"]:checked + .swatch{
+    box-shadow: inset 0 0 0 2px white;
+}
+
+.sizes input[type="radio"]:checked + .options{
+    background-color: lightgray;
+    /* box-shadow: inset 0 0 0 2px white; */
+}
+
+.swatch{
+    display:inline-block;
+    /* vertical-align: middle; */
+    height: 30px;
+    width:30px;
+    border-radius: 50%;
+}
+
+.options{
+    display:flex;
+    height: 30px;
+    width: 45px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    color: black;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+.add{
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border: 0;
+    width: 140px;
+    height: 35px;
+    margin-top: 20px;
+}
+
+.itemphoto{
+    object-fit: cover;
+    object-position: center; 
+    width: 100%;
+    height: 500px;
+}

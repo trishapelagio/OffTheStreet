@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Off The Street</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/order-history.css"> 
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    {{> navbar}}
+
+    <!-- Body -->
+    <div class="container" id="header">
+        <h1 id="od-history">order history</h1>
+        <div class="order-tabs">
+            <a href="orderPending" class="order-tab" title = "pending">pending</a>
+            <a href="orderConfirmed" class="order-tab" title = "delivering">confirmed</a>
+            <a href="orderCompleted" class="order-tab selected-tab" title = "completed">completed</a>
+            <a href="orderCancelled" class="order-tab" title = "cancelled">cancelled</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="order-list">
+
+            {{#each orders}}
+            <div class="order">
+                <div class="row d-flex align-items-center">
+                    <div class="col-2">
+                        <img src="images/FINAL_WHITE LOGO NO BG.png" class="product-icon item-pic">
+                    </div>
+                    <div class="col-7 order-details">
+                        <div class="row">
+                            <a class="product-name" href="/orderSummary?id={{_id}}">Order#{{_id}}</a>
+                        </div>
+                        <div class="row">
+                            <p class="product-total"><span class="bold">total: </span> {{total}} PHP</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
+                            <p class="delivery-details">delivered on:</p>
+                            <span class="date">{{timecompleted}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{> footer}}
+
+</body>
+</html>

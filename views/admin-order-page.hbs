@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+	<script src="javascript/script.js"></script>
+	<script src="javascript/admin.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/adminhome-styles.css">
+</head>
+
+<body>
+	<!--navbar-->
+	<nav class="navbar navbar-expand-md navbar-light">
+		<button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<div class="container-fluid">
+				<div class="row">
+					<!--sidebar-->
+					<div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+						<a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"><img src="images/FINAL_LOGO W- CIRCLE B.png" class="img-logo"></a>
+						<div class="bottom-border pb-3">
+							<img src="images/icon.png" width="50" class="rounded-circle mr-3">
+							<a class="text-white">Admin</a>
+						</div>
+						<ul class="navbar-nav flex-column mt-4">
+							<li class="nav-item"><a href="adminHome" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
+							<li class="nav-item"><a href="adminProduct" class="nav-link text-white p-3 mb-2"><i class="fas fa-shopping-basket text-white fa-lg mr-3"></i>Product</a></li>
+							<li class="nav-item"><a href="#collapseOrder" data-toggle="collapse" class="nav-link text-white p-3 mb-2 sidebar-link current" aria-expanded="false" aria-controls="collapseOrder"><i class="fas fa-shopping-cart text-light fa-lg mr-3"></i>Orders</a>
+								<div class="collapse show" id="collapseOrder">
+									<div class="sidebar-sub">
+									  <ul class="navbar-nav flex-column">
+											<li class="nav-item ">
+												<a class="nav-link text-white sidebar-link sidebar-subtext current" href="adminOrder">View All Orders</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrderPending">View Pending Orders</a>
+											</li>
+											<li class="nav-item ">
+												<a class="nav-link text-white sidebar-link sidebar-subtext" href="adminOrderConfirmed">View Confirmed Orders</a>
+											</li>
+									  </ul>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item"><a href="/logout" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-sign-out-alt text-white fa-lg mr-3"></i>Logout</a></li>
+						</ul>
+					</div>
+					<!--sidebar end-->
+					
+					<!--top-nav-->
+					<div class="col-xl-10 col-lg-9 col-md-8 ml-auto fixed-top py-2 top-navbar">
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<h4 class="text-light text-uppercase mb-0">OFF THE STREET</h4>
+							</div>
+						</div>
+					</div>
+					<!--top-nav end-->
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<section>
+		<div class="container-fluid">
+			<div class="row mb-5">
+				<div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+					<div class="row align-items-center">
+						<div class="col-xl-12 col-12 mt-5">
+							<h3 class="text-muted text-center mb-3 mt-2">All Orders</h3>
+							<table class="table table-dark table-hover text-center">
+								<thead>
+									<tr class="text-muted">
+										<th>#</th>
+										<th>Ordered by</th>
+										{{!-- <th>Product</th> --}}
+										<th>Total</th>
+										<th>Date ordered</th>
+										<th>Status</th>
+									</tr>
+									</thead>
+									<tbody>
+									{{#if orders}}
+									{{#each orders}}
+									<tr>
+										<th>{{quantity}}</th>
+										<td><a href="/orderSummary?id={{_id}}" target="_blank">{{name}}</a></td>
+										{{!-- <td></td> --}}
+										<td>PHP {{total}}</td>
+										<td>{{timeordered}}</td>
+										<td>
+											<select class="form-control summaryselect btn btn-secondary status" id={{_id}} name="status">
+												<option value="" selected hidden>{{status}}</option>
+												<option value="Pending">Pending</option>
+												<option value="Confirmed">Confirmed</option>
+												<option value="Completed">Completed</option>
+												<option value="Cancelled">Cancelled</option>
+											</select>
+										</td>
+									</tr>
+									{{/each}}
+									{{else}}
+									<p>No orders yet</p>
+									{{/if}}
+								</tbody>
+							</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--navbar end-->
+</body>
+</html>
